@@ -1,0 +1,11 @@
+{
+  "appId": "com.lavender.planner",
+  "appName": "Lavender Planner",
+  "webDir": "www",
+  "backgroundColor": "#F7F3FF",
+  "android": {
+    "backgroundColor": "#F7F3FF",
+    "allowMixedContent": false,
+    "captureInput": true
+  }
+}

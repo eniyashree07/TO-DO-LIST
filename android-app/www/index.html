@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Lavender Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="phone">
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-lavender"></span>
+    <span class="blob blob-pink"></span>
+    <span class="blob blob-soft"></span>
+    <span class="blob blob-ring ring-a"></span>
+    <span class="blob blob-ring ring-b"></span>
+    <span class="blob blob-dot dot-a"></span>
+    <span class="blob blob-dot dot-b"></span>
+    <span class="blob blob-dot dot-c"></span>
+  </div>
+
+  <main class="app">
+
+    <!-- ============ SCREEN 1 : WELCOME ============ -->
+    <section class="screen active" id="screen-welcome">
+      <div class="welcome-inner">
+        <div class="welcome-top">
+          <h1 class="title">Welcome! <span class="wave">👋</span></h1>
+          <p class="subtitle">Let's plan your day and achieve your goals <span>✨</span></p>
+        </div>
+
+        <div class="illustration" aria-hidden="true">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ig-lav" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#C4B5FD"/>
+              </linearGradient>
+              <linearGradient id="ig-pink" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#F9A8D4"/><stop offset="1" stop-color="#FBCFE8"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="70" cy="180" rx="70" ry="12" fill="#EDE9FE"/>
+            <ellipse cx="215" cy="182" rx="60" ry="10" fill="#FCE7F3"/>
+            <rect x="22" y="66" width="150" height="112" rx="18" fill="#FFFFFF" stroke="#EDE9FE" stroke-width="2"/>
+            <rect x="22" y="66" width="150" height="28" rx="18" fill="#EDE9FE"/>
+            <circle cx="52" cy="80" r="5" fill="#F9A8D4"/>
+            <line x1="72" y1="80" x2="146" y2="80" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round"/>
+            <line x1="46" y1="110" x2="146" y2="110" stroke="#EDE9FE" stroke-width="5" stroke-linecap="round"/>
+            <line x1="46" y1="127" x2="126" y2="127" stroke="#FCE7F3" stroke-width="5" stroke-linecap="round"/>
+            <line x1="46" y1="144" x2="152" y2="144" stroke="#EDE9FE" stroke-width="5" stroke-linecap="round"/>
+            <line x1="46" y1="161" x2="104" y2="161" stroke="#FCE7F3" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="28" cy="48" r="9" fill="#F9A8D4"/>
+            <rect x="176" y="34" width="86" height="84" rx="20" fill="#FFF" stroke="#FCE7F3" stroke-width="2" transform="rotate(-7 219 76)"/>
+            <rect x="185" y="46" width="44" height="6" rx="3" fill="#EDE9FE" transform="rotate(-7 219 76)"/>
+            <rect x="185" y="61" width="64" height="6" rx="3" fill="#FCE7F3" transform="rotate(-7 219 76)"/>
+            <rect x="185" y="76" width="48" height="6" rx="3" fill="#EDE9FE" transform="rotate(-7 219 76)"/>
+            <circle cx="248" cy="48" r="6" fill="#F9A8D4"/>
+            <circle cx="50" cy="28" r="6" fill="#C4B5FD"/>
+            <path d="M205 148c0-26 20-40 44-40s44 14 44 40" fill="none" stroke="#F9A8D4" stroke-width="4" stroke-linecap="round"/>
+            <path d="M205 148c0-18 16-30 34-30" fill="none" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round"/>
+            <rect x="196" y="152" width="26" height="34" rx="8" fill="#FFFFFF" stroke="#EDE9FE" stroke-width="2"/>
+            <rect x="201" y="166" width="16" height="11" rx="4" fill="#FCE7F3"/>
+            <circle cx="209" cy="160" r="3" fill="#F9A8D4"/>
+            <path d="M52 200l8-16" stroke="#86D9A3" stroke-width="3" stroke-linecap="round"/>
+            <path d="M52 200l-8-16" stroke="#86D9A3" stroke-width="3" stroke-linecap="round"/>
+            <rect x="48" y="168" width="8" height="14" rx="4" fill="url(#ig-lav)"/>
+            <rect x="118" y="8" width="10" height="14" rx="5" fill="#F9A8D4"/>
+            <circle cx="256" cy="100" r="5" fill="#F9A8D4"/>
+            <circle cx="10" cy="120" r="5" fill="#C4B5FD"/>
+          </svg>
+        </div>
+
+        <div class="form-card glass">
+          <div class="field">
+            <label for="inp-firstname">First Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input id="inp-firstname" type="text" placeholder="Enter your name" autocomplete="off" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="inp-age">Age</label>
+            <div class="input-wrap">
+              <span class="input-icon">🎂</span>
+              <input id="inp-age" type="number" placeholder="Enter your age" autocomplete="off" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="inp-school">School / College</label>
+            <div class="input-wrap">
+              <span class="input-icon">🎓</span>
+              <input id="inp-school" type="text" placeholder="Enter your institution" autocomplete="off" />
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="btn-start">Start Activity <span>🚀</span></button>
+        <p class="moto">One step closer to a better you! <span>💗</span></p>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 2 : HOME ============ -->
+    <section class="screen" id="screen-home">
+      <header class="topbar">
+        <div class="greet">
+          <h1 class="title">Hi, <span id="home-name">Ananya</span>! <span class="wave">👋</span></h1>
+          <p class="subtitle">Let's make today productive.</p>
+        </div>
+        <button class="icon-btn bell" id="btn-bell" aria-label="Notifications">
+          <span class="bell-dot"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </button>
+      </header>
+
+      <div class="progress-card glass">
+        <div class="ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="ring-center">
+            <span class="ring-value" id="ring-value">60%</span>
+          </div>
+        </div>
+        <div class="progress-stats">
+          <h3>Today's Progress</h3>
+          <div class="stat-row"><span class="dot dot-green"></span><span class="stat-label">3 Completed</span><b class="stat-count" id="stat-completed">3</b></div>
+          <div class="stat-row"><span class="dot dot-pink"></span><span class="stat-label">2 Pending</span><b class="stat-count" id="stat-pending">2</b></div>
+          <div class="stat-row"><span class="dot dot-yellow"></span><span class="stat-label">1 Missed</span><b class="stat-count" id="stat-missed">1</b></div>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <h2>Activities</h2>
+        <button class="link-btn" id="btn-see-all">See all</button>
+      </div>
+
+      <div class="activity-list" id="home-activity-list"></div>
+
+      <div class="motivator-card">
+        <span class="motivator-emoji">🌷</span>
+        <p>You're doing great today! Keep the momentum going.</p>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 3 : CREATE ACTIVITY ============ -->
+    <section class="screen" id="screen-create">
+      <header class="topbar simple">
+        <button class="icon-btn back" id="btn-create-back" aria-label="Back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <h1 class="title">Create Activity</h1>
+        <span class="topbar-spacer"></span>
+      </header>
+
+      <div class="create-illus glass" aria-hidden="true">
+        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="12" width="86" height="96" rx="14" fill="#FFFFFF" stroke="#EDE9FE" stroke-width="2"/>
+          <rect x="16" y="12" width="86" height="22" rx="14" fill="#EDE9FE"/>
+          <circle cx="36" cy="23" r="4" fill="#F9A8D4"/>
+          <line x1="50" y1="23" x2="86" y2="23" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round"/>
+          <line x1="32" y1="48" x2="82" y2="48" stroke="#EDE9FE" stroke-width="4" stroke-linecap="round"/>
+          <line x1="32" y1="62" x2="68" y2="62" stroke="#FCE7F3" stroke-width="4" stroke-linecap="round"/>
+          <line x1="32" y1="76" x2="86" y2="76" stroke="#EDE9FE" stroke-width="4" stroke-linecap="round"/>
+          <rect x="130" y="6" width="82" height="82" rx="16" fill="#FFF" stroke="#FCE7F3" stroke-width="2"/>
+          <rect x="138" y="14" width="60" height="6" rx="3" fill="#EDE9FE"/>
+          <rect x="138" y="28" width="66" height="6" rx="3" fill="#FCE7F3"/>
+          <rect x="138" y="42" width="50" height="6" rx="3" fill="#EDE9FE"/>
+          <rect x="138" y="56" width="60" height="6" rx="3" fill="#FCE7F3"/>
+          <circle cx="221" cy="18" r="5" fill="#F9A8D4"/>
+          <circle cx="142" cy="76" r="10" fill="#A78BFA"/>
+          <circle cx="172" cy="86" r="7" fill="#F9A8D4"/>
+          <path d="M40 108l6-10 6 10" fill="#86D9A3"/>
+          <path d="M40 108v-12" stroke="#A78BFA" stroke-width="3" stroke-linecap="round"/>
+          <path d="M186 106c0-16 12-24 26-24s26 8 26 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="form-card glass create-form">
+        <div class="field">
+          <label>Activity / Task Name</label>
+          <div class="input-wrap"><span class="input-icon">📝</span><input id="inp-task-name" type="text" placeholder="e.g. Complete Assignment" /></div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label>Date</label>
+            <div class="input-wrap"><span class="input-icon">📅</span><input id="inp-task-date" type="date" /></div>
+          </div>
+          <div class="field">
+            <label>Start Time</label>
+            <div class="input-wrap"><span class="input-icon">🕐</span><input id="inp-task-time" type="time" /></div>
+          </div>
+        </div>
+        <div class="field">
+          <label>End Time / Reminder</label>
+          <div class="input-wrap"><span class="input-icon">⏰</span><input id="inp-task-end" type="time" /></div>
+        </div>
+        <div class="field">
+          <label>Priority</label>
+          <div class="priority-pills" id="priority-pills">
+            <button class="pill" data-priority="High">High</button>
+            <button class="pill active" data-priority="Medium">Medium</button>
+            <button class="pill" data-priority="Low">Low</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <div class="input-wrap"><span class="input-icon">✏️</span><textarea id="inp-task-desc" rows="3" placeholder="Add a short note..."></textarea></div>
+        </div>
+      </div>
+
+      <h3 class="preview-head">Preview</h3>
+      <div class="activity-card glass preview-card" id="preview-card">
+        <div class="act-top">
+          <span class="act-emoji" id="preview-emoji">📘</span>
+          <div class="act-info">
+            <h4 id="preview-name">Complete Assignment</h4>
+            <p id="preview-meta">Mon, 13 Aug · 06:00 PM – 07:00 PM</p>
+          </div>
+          <span class="priority-badge" id="preview-priority">Medium</span>
+        </div>
+        <p class="act-desc" id="preview-desc">Add a short description for your activity.</p>
+      </div>
+
+      <button class="btn btn-primary btn-lg" id="btn-add-activity">Add Activity <span>💜</span></button>
+    </section>
+
+    <!-- ============ SCREEN 4 : ACTIVITY ADDED ============ -->
+    <section class="screen" id="screen-added">
+      <div class="confetti-layer" id="confetti-layer"></div>
+      <div class="center-content">
+        <div class="success-orb">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="46" class="succ-ring"/>
+            <path d="M32 52l13 13 25-30" class="succ-check"/>
+          </svg>
+        </div>
+        <h1 class="title">Activity Added! <span>🎉</span></h1>
+        <p class="subtitle center">Your activity has been added successfully.</p>
+
+        <div class="activity-card glass added-task" id="added-task-card">
+          <div class="act-top">
+            <span class="act-emoji" id="added-emoji">📘</span>
+            <div class="act-info">
+              <h4 id="added-name">Complete Assignment</h4>
+              <p id="added-meta">Mon, 13 Aug · 06:00 PM</p>
+            </div>
+            <span class="priority-badge" id="added-priority">Medium</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="btn-back-home">Back to Home</button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 5 : TASK COMPLETED ============ -->
+    <section class="screen" id="screen-completed">
+      <div class="confetti-layer" id="confetti-layer-2"></div>
+      <div class="center-content">
+        <div class="celebration-stage">
+          <div class="star-burst">⭐</div>
+          <div class="celeb-orb">
+            <div class="celeb-emoji">🥳</div>
+            <span class="sparkle s1">✦</span>
+            <span class="sparkle s2">✦</span>
+            <span class="sparkle s3">✦</span>
+            <span class="sparkle s4">✦</span>
+          </div>
+        </div>
+        <h1 class="title">Amazing, <span id="celeb-name">Ananya</span>! <span>🎉</span></h1>
+        <p class="subtitle center">You completed your task!</p>
+        <p class="subtitle small center">Keep up the great work.</p>
+
+        <div class="completed-badge glass">
+          <span class="badge-check">✓</span>
+          <div>
+            <b id="completed-task-name">Read 10 Pages</b>
+            <p>Task completed</p>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" id="btn-awesome">Awesome! <span>😍</span></button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 6 : NOTIFICATIONS ============ -->
+    <section class="screen" id="screen-notif">
+      <header class="topbar simple">
+        <button class="icon-btn back" id="btn-notif-back" aria-label="Back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <h1 class="title">Notifications</h1>
+        <span class="topbar-spacer"></span>
+      </header>
+
+      <div class="tabs" id="notif-tabs">
+        <button class="tab active" data-tab="all">All</button>
+        <button class="tab" data-tab="reminders">Reminders</button>
+        <button class="tab" data-tab="updates">Updates</button>
+      </div>
+
+      <div class="notif-list" id="notif-list"></div>
+    </section>
+
+    <!-- ============ SCREEN 7 : PROGRESS ============ -->
+    <section class="screen" id="screen-progress">
+      <header class="topbar simple">
+        <span class="topbar-spacer"></span>
+        <h1 class="title">Progress</h1>
+        <button class="icon-btn back" id="btn-progress-back" aria-label="Back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+      </header>
+
+      <div class="progress-hero glass">
+        <h1 class="title">Great Progress, <span id="progress-name">Ananya</span>! <span>🏆</span></h1>
+        <p class="subtitle">You are doing awesome!</p>
+      </div>
+
+      <div class="today-summary glass">
+        <div class="ring ring-lg">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill fill-green" id="ring-fill-2" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="ring-center">
+            <span class="ring-value" id="ring-value-2">80%</span>
+            <span class="ring-label">Completed</span>
+          </div>
+        </div>
+        <div class="today-stats">
+          <div class="stat-line"><span class="ico ico-lav">✓</span><span>Total Activities</span><b id="stat-total">6</b></div>
+          <div class="stat-line"><span class="ico ico-green">✓</span><span>Completed</span><b class="green" id="stat-total-completed">3</b></div>
+          <div class="stat-line"><span class="ico ico-pink">○</span><span>Pending</span><b class="pink" id="stat-total-pending">2</b></div>
+          <div class="stat-line"><span class="ico ico-yellow">!</span><span>Missed</span><b class="yellow" id="stat-total-missed">1</b></div>
+        </div>
+      </div>
+
+      <div class="weekly-card glass">
+        <div class="section-head">
+          <h2>Weekly Progress</h2>
+          <span class="week-label">This week</span>
+        </div>
+        <div class="chart">
+          <div class="bar-col"><span class="bar-val">2</span><div class="bar"><span class="bar-fill" style="height:35%"></span></div><span class="bar-day">Mon</span></div>
+          <div class="bar-col"><span class="bar-val">4</span><div class="bar"><span class="bar-fill" style="height:55%"></span></div><span class="bar-day">Tue</span></div>
+          <div class="bar-col"><span class="bar-val">5</span><div class="bar"><span class="bar-fill" style="height:72%"></span></div><span class="bar-day">Wed</span></div>
+          <div class="bar-col"><span class="bar-val">3</span><div class="bar"><span class="bar-fill pink" style="height:46%"></span></div><span class="bar-day">Thu</span></div>
+          <div class="bar-col"><span class="bar-val">6</span><div class="bar"><span class="bar-fill" style="height:88%"></span></div><span class="bar-day">Fri</span></div>
+          <div class="bar-col"><span class="bar-val">5</span><div class="bar"><span class="bar-fill pink" style="height:70%"></span></div><span class="bar-day">Sat</span></div>
+          <div class="bar-col today"><span class="bar-val">6</span><div class="bar"><span class="bar-fill grad" style="height:92%"></span></div><span class="bar-day">Sun</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 8 : PROFILE ============ -->
+    <section class="screen" id="screen-profile">
+      <header class="topbar simple">
+        <span class="topbar-spacer"></span>
+        <h1 class="title">Profile</h1>
+        <button class="icon-btn" id="btn-theme-quick" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </header>
+
+      <div class="profile-card glass">
+        <div class="avatar">
+          <span id="avatar-emoji">👧🏻</span>
+          <span class="avatar-ring"></span>
+        </div>
+        <h1 class="title" id="profile-name">Ananya</h1>
+        <p class="subtitle center"><span id="profile-age">19</span> Years</p>
+        <p class="subtitle center" id="profile-school">Sasurie College of Arts &amp; Science</p>
+      </div>
+
+      <div class="profile-stats glass">
+        <div class="p-stat"><span class="p-ico ico-lav">📋</span><b id="profile-total">6</b><span>Total Tasks</span></div>
+        <div class="p-stat"><span class="p-ico ico-green">✅</span><b id="profile-completed">3</b><span>Completed</span></div>
+        <div class="p-stat"><span class="p-ico ico-pink">🕓</span><b id="profile-pending">2</b><span>Pending</span></div>
+        <div class="p-stat"><span class="p-ico ico-yellow">📌</span><b id="profile-missed">1</b><span>Missed</span></div>
+      </div>
+
+      <div class="profile-options glass">
+        <button class="p-option" id="btn-edit-profile"><span class="opt-ico">✏️</span>Edit Profile<span class="chev">›</span></button>
+        <button class="p-option" id="btn-notif-settings"><span class="opt-ico">🔔</span>Notification Settings<span class="chev">›</span></button>
+        <button class="p-option" id="btn-theme-picker"><span class="opt-ico">🎨</span>Theme<span class="chev">›</span></button>
+        <button class="p-option danger" id="btn-logout"><span class="opt-ico">🚪</span>Logout<span class="chev">›</span></button>
+      </div>
+
+      <p class="version">Lavender Planner · v1.0 💜</p>
+    </section>
+
+  </main>
+
+  <!-- ============ BOTTOM NAV ============ -->
+  <nav class="bottom-nav hidden" id="bottom-nav">
+    <button class="nav-item active" data-nav="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" data-nav="activities">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <span>Activities</span>
+    </button>
+    <button class="nav-item nav-add" data-nav="create" aria-label="Create Activity">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
+    <button class="nav-item" data-nav="progress">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span>Progress</span>
+    </button>
+    <button class="nav-item" data-nav="profile">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- ============ MODALS ============ -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal glass" id="modal-edit">
+      <h3 class="modal-title">Edit Profile</h3>
+      <div class="field">
+        <label for="edit-name">First Name</label>
+        <div class="input-wrap"><span class="input-icon">👤</span><input id="edit-name" type="text" autocomplete="off" /></div>
+      </div>
+      <div class="field">
+        <label for="edit-age">Age</label>
+        <div class="input-wrap"><span class="input-icon">🎂</span><input id="edit-age" type="number" autocomplete="off" /></div>
+      </div>
+      <div class="field">
+        <label for="edit-school">School / College</label>
+        <div class="input-wrap"><span class="input-icon">🎓</span><input id="edit-school" type="text" autocomplete="off" /></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="btn-edit-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-edit-save">Save Changes</button>
+      </div>
+    </div>
+
+    <div class="modal glass" id="modal-notif">
+      <h3 class="modal-title">Notification Settings</h3>
+      <div class="switch-row">
+        <div class="switch-info"><b>Daily Reminders</b><span>Remind me about upcoming activities</span></div>
+        <label class="switch"><input type="checkbox" id="sw-reminders" /><span class="slider"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-info"><b>Activity Alerts</b><span>Notify me when a task is due</span></div>
+        <label class="switch"><input type="checkbox" id="sw-alerts" /><span class="slider"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-info"><b>Updates &amp; Milestones</b><span>Progress and achievement updates</span></div>
+        <label class="switch"><input type="checkbox" id="sw-updates" /><span class="slider"></span></label>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="btn-notif-close">Done</button>
+      </div>
+    </div>
+
+    <div class="modal glass" id="modal-theme">
+      <h3 class="modal-title">Choose Theme</h3>
+      <div class="theme-options">
+        <button class="theme-opt active" data-theme-choice="light">
+          <span class="theme-swatch sw-light"><span class="sw-dot"></span></span>
+          <b>Light</b>
+          <small>Bright &amp; pastel</small>
+        </button>
+        <button class="theme-opt" data-theme-choice="dark">
+          <span class="theme-swatch sw-dark"><span class="sw-dot"></span></span>
+          <b>Dark</b>
+          <small>Calm &amp; cozy</small>
+        </button>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="btn-theme-close">Cancel</button>
+        <button class="btn btn-primary" id="btn-theme-apply">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
